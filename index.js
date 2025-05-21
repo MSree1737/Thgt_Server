@@ -15,6 +15,16 @@ config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// e.g. in Express:
+app.use(
+  cors({
+    origin: "https://thgt-client.vercel.app",
+    methods: ["GET","POST","PUT","DELETE"],
+    credentials: true
+  })
+);
+
+
 app.use(express.static('public'));
 
 export const db = new pg.Client({
